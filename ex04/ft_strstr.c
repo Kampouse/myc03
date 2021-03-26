@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   strstr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 14:31:17 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/03/26 07:34:13 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/03/19 10:10:27 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/03/26 07:32:29 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp (char *str1, char *str2)
+char	*ft_strstr(char *base, char *to_find)
 {
-	int		 value;
+	char	*basecp;	
+	char	*looking;
+	char	*ptr;
 
-	value = 0;
-	while (*str1 != '\0' && (*str1 == *str2))
+	basecp = base;
+	looking = to_find;
+	while (*basecp != '\0')
 	{
-		str1++;
-		str2++;
+		if (*to_find == '\0')
+			return (basecp);
+		ptr = basecp;
+		while (*looking == *basecp && *looking != '\0')
+		{
+			looking++;
+			basecp++;
+		}
+		if (*looking == '\0')
+			return (ptr);
+		basecp++;
 	}
-	return (*(unsigned char *)str1 - *(unsigned char *) str2);
+	return (0);
 }

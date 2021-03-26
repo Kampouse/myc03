@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 14:31:17 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/03/26 07:34:13 by jean-phil        ###   ########.fr       */
+/*   Created: 2021/03/18 18:01:40 by jean-phil         #+#    #+#             */
+/*   Updated: 2021/03/26 07:02:10 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp (char *str1, char *str2)
+char	*ft_strcat(char *str1, char *str2)
 {
-	int		 value;
+	char	*star;
 
-	value = 0;
-	while (*str1 != '\0' && (*str1 == *str2))
-	{
-		str1++;
-		str2++;
-	}
-	return (*(unsigned char *)str1 - *(unsigned char *) str2);
+	star = str1;
+	while (*star)
+		star++;
+	while (*str2)
+		*star++ = *str2++;
+	*star = '\0';
+	return (str1);
 }
