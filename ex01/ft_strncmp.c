@@ -6,7 +6,7 @@
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 15:20:03 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/03/26 06:59:56 by jean-phil        ###   ########.fr       */
+/*   Updated: 2021/03/29 10:32:10 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_strncmp(char *str1, char *str2, unsigned int n)
 			return (*(unsigned char *)str1 - *(unsigned char *) str2);
 		str1++;
 		str2++;
+		if (*str1++ == '\0')
+			break ;
 		n--;
 	}
 	return (0);
