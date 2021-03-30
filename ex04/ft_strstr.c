@@ -6,7 +6,7 @@
 /*   By: jean-phil <jemartel@student.42quebec>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 10:10:27 by jean-phil         #+#    #+#             */
-/*   Updated: 2021/03/29 10:36:40 by jean-phil        ###   ########.fr       */
+/*   Updated: 2021/03/30 08:36:58 by jean-phil        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strstr(char *base, char *to_find)
 			basecp++;
 		}
 		if (*looking == '\0')
-			return (ptr);
+			return (to_find);
 		basecp++;
 	}
 	return (0);
